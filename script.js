@@ -6,7 +6,7 @@ const result = document.querySelector('#result');
 
 calc.addEventListener('click', function(event){
   if (!event.target.classList.contains('calc_button')) return;
-// Добавляем обработчик событий на нащ калькулятор и исключаем все кроме кнопок
+// Добавляем обработчик событий калькулятор и исключаем все кроме кнопок
 
 const value = event.target.innerText;
 // Тут получаем содержание нашей кнопки на которую кликаем
@@ -18,9 +18,10 @@ switch (value) {
         // Очищаем наш Result
 
     case '=':
-    result.innerText = eval(result.innerText).toFixed(2);
+    result.innerText = eval(result.innerText);
     break; 
-//  Тут выполняем  наши математичкские вычисления при помощи функции eval() и обрезаем результат до 2 знаков после точки
+//  Тут выполняем  наши математичкские вычисления при помощи функции eval()
+
     default:
         result.innerText += value;
 
